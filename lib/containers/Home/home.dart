@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tp/components/Article/ArticleList/article_list.dart';
+import 'package:flutter_tp/components/TopBar/top_bar.dart';
 import 'package:flutter_tp/components/VerticalScrollableBar/vertical_scrollable_bar.dart';
 import 'package:flutter_tp/models/Article.dart';
 
@@ -35,10 +36,14 @@ class Home extends StatelessWidget {
                 children: [
                   Expanded(
                     flex: 1,
+                    child: TopBar()
+                  ),
+                  Expanded(
+                    flex: 1,
                     child: VerticalScrollableBar(items: this.categories)
                   ),
                   Expanded(
-                    flex: 5,
+                    flex: 10,
                     child: ArticleList(articles: this.articles),
                   )
                 ]
