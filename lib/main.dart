@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'containers/Home/home.dart';
 import 'containers/Card/card.dart' as CardComponent;
 
 void main() {
