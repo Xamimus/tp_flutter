@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class CardItem extends StatelessWidget {
+class CartItem extends StatelessWidget {
 
   final String item;
 
-  CardItem({Key? key, required this.item}) : super(key: key);
+  CartItem({Key? key, required this.item}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

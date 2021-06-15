@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'containers/Home/home.dart';
-import 'containers/Card/card.dart' as CardComponent;
+import 'containers/Cart/cart.dart';
 
 void main() {
   runApp(MyApp());
