@@ -45,16 +45,35 @@ class ArticleItem extends StatelessWidget {
                                 overflow: TextOverflow.ellipsis
                             )),
                       ),
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: Container(
-                            margin: EdgeInsets.only(left: 10.0, right: 10.0, bottom: 5.0),
-                            child: Text(
-                                article.price.toStringAsFixed(2) + "€",
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                                overflow: TextOverflow.ellipsis
-                            )),
-                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Align(
+                            alignment: Alignment.centerLeft,
+                            child: Container(
+                                margin: EdgeInsets.only(left: 10.0, right: 10.0, bottom: 5.0),
+                                child: Text(
+                                    article.price.toStringAsFixed(2) + "€",
+                                    style: TextStyle(fontWeight: FontWeight.bold),
+                                    overflow: TextOverflow.ellipsis
+                                )),
+                          ),
+                          Align(
+                            alignment: Alignment.centerRight,
+                            child: InkWell(
+                              onTap: () => "Achat",
+                             child: Container(
+                               margin: EdgeInsets.only(right: 10.0),
+                               child: Icon(
+                                   Icons.shopping_cart,
+                                   color: Colors.black,
+                                   size: 20.0
+                               ),
+                             )
+                            )
+                          ),
+                        ]
+                      )
                     ],
                   ),
                 ],
