@@ -15,17 +15,18 @@ class VerticalScrollableBar extends StatelessWidget {
                 itemCount: this.items.length,
                 itemBuilder: (BuildContext context, int index) =>
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 50.0),
-                    child: InkWell(
-                      onTap: () => print('Test'),
-                      child: Text(
-                        items[index]["value"],
-                        style: const TextStyle(
-                          fontSize: 18,
-                          fontFamily: 'sans-serif'
-                        ),
+                    margin: const EdgeInsets.symmetric(horizontal: 15),
+                    child: Center(
+                      child: InkWell(
+                          onTap: () => print('Test'),
+                          child: Text(
+                            items[index]["value"],
+                            style: const TextStyle(
+                              fontSize: 16,
+                            ),
+                          )
                       )
-                    ),
+                    )
                   )
             )
           )
