@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'containers/Details/Details.dart';
 import 'containers/Home/home.dart';
+import 'containers/Cart/cart.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,6 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
