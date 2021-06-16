@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 
 class CartItem extends StatelessWidget {
 
   final String item;
 
-  CartItem({Key? key, required this.item}) : super(key: key);
+  const CartItem({Key? key, required this.item}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +77,7 @@ class CartItem extends StatelessWidget {
                             Row(
                               children: [
                                 TextButton(
-                                  onPressed: () {},
+                                  onPressed: () => context.read<CartBloc>().add(CartAddEvent()),
                                   child: Text("-")
                                 ),
                                 Text("1"),
