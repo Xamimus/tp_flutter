@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tp/services/cart/cart_bloc.dart';
 import 'cart_item.dart';
-import 'package:bloc/bloc.dart'
+import 'package:bloc/bloc.dart';
 
 class CartList extends StatefulWidget {
   final List<String> items;
@@ -13,18 +14,18 @@ class CartList extends StatefulWidget {
 
 class _CartListState extends State<CartList> {
 
-  final List<String> _items;
+  List<String> items;
 
-  const _CartListState({Key? key, required this.items,}) : super(key: key);
+  _CartListState({required this.items});
 
   @override
   void initState() {
     print("InitState");
     super.initState();
 
-    setState(() => _items = );
+    setState(() => items = ["tmer"]);
 
-    context.read<IncrementBloc>().add(IncrementInitialEvent());
+    /* context.read<CartBloc>().add(CartInitialEvent()); */
 
     // CODE
 

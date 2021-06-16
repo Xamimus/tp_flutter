@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+// ignore: unused_import
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_tp/services/cart/cart_bloc.dart';
 
 
 class CartItem extends StatelessWidget {
@@ -76,10 +78,10 @@ class CartItem extends StatelessWidget {
                           children: [
                             Row(
                               children: [
-                                TextButton(
-                                  onPressed: () => context.read<CartBloc>().add(CartAddEvent()),
+                                /* TextButton(
+                                  onPressed: () => context.read<CartBloc>().add(CartAddEvent(this.item)),
                                   child: Text("-")
-                                ),
+                                ), */
                                 Text("1"),
                                 TextButton(
                                   onPressed: () {},
