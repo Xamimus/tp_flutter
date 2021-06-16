@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tp/components/TopBar/top_bar.dart';
+import 'package:flutter_tp/containers/Cart/cart.dart';
 //import 'package:flutter_tp/components/vertical_scrollable_bar.dart';
 
 class Details extends StatelessWidget {
@@ -16,25 +18,27 @@ class Details extends StatelessWidget {
               image: new DecorationImage(image: new AssetImage("images/test.jpg"), fit: BoxFit.cover,),
             ),
           ),
-          Align(
-            alignment: Alignment(-0.9, -0.95),
-            child: IconButton(
-              icon: new Icon(Icons.arrow_back, color: Colors.white),
-              onPressed: () {
-                print("Pressed");
-              }
-            ),
+          TopBar(
+            themeColor: Colors.white,
+            elements: <Widget>[
+              Text(""),
+              Row(
+                children: [
+                  InkWell(
+                      onTap: () => Navigator.push(context, MaterialPageRoute<void>(builder: (BuildContext context) => Cart())),
+                      child: Container(
+                        margin: EdgeInsets.fromLTRB(10.0, 10.0, 0.0, 10.0),
+                        child: Icon(
+                            Icons.shopping_cart,
+                            color: Colors.white,
+                            size: 25.0
+                        ),
+                      )
+                  )
+                ],
+              )
+            ],
           ),
-          Align(
-            alignment: Alignment(0.9, -0.95),
-            child: IconButton(
-              icon: new Icon(Icons.shopping_cart, color: Colors.white),
-              onPressed: () {
-                print("Pressed");
-              }
-            ),
-          ),
-          // Black square centered in stack
           Align(
             alignment: Alignment(0.0, 1.0),
             child: new Container(

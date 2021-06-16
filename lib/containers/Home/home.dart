@@ -16,7 +16,7 @@ class Home extends StatelessWidget {
   ];
 
   final List<Article> articles = [
-    Article(1, "Article n°1", "Test description", 10.00, "https://cdn.pixabay.com/photo/2021/04/29/11/40/big-ben-6216420_960_720.jpg"),
+    Article(1, "Article n°1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaaa", "Test description", 10.00, "https://cdn.pixabay.com/photo/2021/04/29/11/40/big-ben-6216420_960_720.jpg"),
     Article(2, "Article n°1", "Test description", 10.00, "https://cdn.pixabay.com/photo/2021/04/29/11/40/big-ben-6216420_960_720.jpg"),
     Article(3, "Article n°1", "Test description", 10.00, "https://cdn.pixabay.com/photo/2021/04/29/11/40/big-ben-6216420_960_720.jpg"),
     Article(4, "Article n°1", "Test description", 10.00, "https://cdn.pixabay.com/photo/2021/04/29/11/40/big-ben-6216420_960_720.jpg"),
