@@ -3,20 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_tp/services/cart/cart_bloc.dart';
 
+import 'package:flutter_tp/models/Article.dart';
 
 class CartItem extends StatelessWidget {
 
-  final String item;
+  final Article item;
 
   const CartItem({Key? key, required this.item}) : super(key: key);
 
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(16.0),
-      child: Center(
-        child: Container(
+    return Container(
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -34,7 +32,8 @@ class CartItem extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(20)),
           child: Padding(
             padding: EdgeInsets.all(10),
-            child: Row(children: [
+            child: Expanded(
+              child: Row(children: [
               Column(
                 children: [
                   Container(
@@ -55,63 +54,56 @@ class CartItem extends StatelessWidget {
                   )
                 ]
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Container(
-                        margin: EdgeInsets.all(3),
-                        width: 200,
-                        height: 50,
-                        child: Text("Nom du produit à rallonge pour voir sur plusieurs lignes"),
-                      )
-                    ] 
-                  ),
-                  Row(
-                    children: [
-                      Container(
-                        margin: EdgeInsets.all(0),
-                        width: 137,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                /* TextButton(
-                                  onPressed: () => context.read<CartBloc>().add(CartAddEvent(this.item)),
-                                  child: Text("-")
-                                ), */
-                                Text("1"),
-                                TextButton(
-                                  onPressed: () {},
-                                  child: Text("+")
-                                ),
-                              ]
-                            )
-                          ]
+              Expanded(
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.all(10.0),
+                          child: Text(
+                            item.name,
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                          ),
                         ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.all(3),
-                        width: 50,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            Text(item)
-                          ]
+                        Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Align(
+                                alignment: Alignment.centerLeft,
+                                child: Container(
+                                    child: Row(
+                                        children: [
+                                          TextButton(
+                                              onPressed: () {},
+                                              child: Text("-")
+                                          ),
+                                          Text("1"),
+                                          TextButton(
+                                              onPressed: () {},
+                                              child: Text("+")
+                                          ),
+                                        ]
+                                    )),
+                              ),
+                              Align(
+                                  alignment: Alignment.centerRight,
+                                  child: Container(
+                                    margin: EdgeInsets.only(right: 10.0),
+                                    child: Text(item.price.toStringAsFixed(2) + "€"),
+                                  )
+                              ),
+                            ]
                         ),
-                      ),
-                    ] 
+                      ]
                   ),
-                ]
-              ),
+              )
             ],
           ),
-            )
         )
       )
-      )
+        )
     );
   }
 }

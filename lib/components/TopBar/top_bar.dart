@@ -5,15 +5,15 @@ import 'package:flutter_tp/containers/Cart/cart.dart';
 class TopBar extends StatelessWidget {
 
   final List<Widget> elements;
+  Color themeColor;
 
-  TopBar({Key? key, required this.elements}) : super(key: key);
+  TopBar({Key? key, required this.elements, this.themeColor = Colors.black }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
+    return AppBar(
           iconTheme: IconThemeData(
-            color: Colors.black, //change your color here
+            color: themeColor, //change your color here
           ),
           backgroundColor: Colors.transparent,
           elevation: 0.0,
@@ -25,7 +25,7 @@ class TopBar extends StatelessWidget {
                 )
             ),
           )
-      ),
+
     );
   }
 }
