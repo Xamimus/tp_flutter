@@ -28,7 +28,7 @@ class Delivery extends StatelessWidget {
                   CustomTextField(name: "Complément d'adresse"),
                   CustomTextField(name: "Code Postal"),
                   CustomTextField(name: "Ville"),
-                  CustomButton(name: "UTILISER CETTE ADRESSE"),
+                  CustomButton(name: "UTILISER CETTE ADRESSE", onPress: () => print("Test")),
                 ],
               )
             )

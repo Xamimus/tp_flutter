@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 class CustomButton extends StatelessWidget {
 
   final String name;
+  final dynamic onPress;
 
-  CustomButton({Key? key, required this.name }) : super(key: key);
+  CustomButton({Key? key, required this.name, required this.onPress }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,7 @@ class CustomButton extends StatelessWidget {
           backgroundColor: Colors.black87,
           textStyle: const TextStyle(fontSize: 20),
         ),
-        onPressed: () => print("Pressed"),
+        onPressed: () => onPress,
         child: Text(name),
       ),
     );
