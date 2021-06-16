@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'containers/Details/Details.dart';
-import 'containers/Home/home.dart';
-import 'containers/Cart/cart.dart';
 
 void main() {
   runApp(MyApp());

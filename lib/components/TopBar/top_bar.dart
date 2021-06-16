@@ -10,8 +10,7 @@ class TopBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
+    return AppBar(
           iconTheme: IconThemeData(
             color: Colors.black, //change your color here
           ),
@@ -25,7 +24,7 @@ class TopBar extends StatelessWidget {
                 )
             ),
           )
-      ),
+
     );
   }
 }
