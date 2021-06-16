@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'containers/Card/card.dart' as CardComponent;
+import 'containers/Home/home.dart';
+import 'containers/Cart/cart.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: CardComponent.Card(),
+      home: Cart(),
     );
   }
 }

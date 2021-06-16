@@ -10,10 +10,15 @@ class ArticleList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    final double itemHeight = (size.height - kToolbarHeight - 24) / 3;
+    final double itemWidth = size.width / 2;
+
     return Scaffold(
       body: SafeArea(
         child: GridView.count(
           crossAxisCount: 2,
+          childAspectRatio: (itemWidth / itemHeight),
           children: List.generate(this.articles.length, (index) =>
             ArticleItem(article: this.articles[index])
           ),
