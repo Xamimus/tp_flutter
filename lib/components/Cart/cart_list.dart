@@ -41,7 +41,6 @@ class _CartListState extends State<CartList> {
 
   @override
   Widget build(BuildContext context) {
-    final CartBloc _counterBloc = BlocProvider.of<CartBloc>(context);
     if (items.length == 0) {
       return Center(
         child: Text("Panier vide", style: TextStyle(fontSize: 20),)

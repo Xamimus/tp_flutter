@@ -4,7 +4,7 @@ abstract class CartState extends Equatable {
   const CartState();
 
   @override
-  List<Object> get props => [];
+  List<dynamic> get props => [];
 }
 
 class CartInitialState extends CartState {

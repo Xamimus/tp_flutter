@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tp/components/CustomButton/custom_button.dart';
 import 'package:flutter_tp/components/CustomTextField/custom_text_field.dart';
 import 'package:flutter_tp/components/TopBar/top_bar.dart';
+import 'package:flutter_tp/containers/Command/command.dart';
 
 class Pay extends StatelessWidget {
   Pay({Key? key}) : super(key: key);
@@ -81,7 +82,7 @@ class Pay extends StatelessWidget {
                     CustomTextField(name: "Card number", onChange: (value) => { cardNumber = value }),
                     CustomTextField(name: "Expiry Date", onChange: (value) => { expiryDate = value },),
                     CustomTextField(name: "Code CVC", onChange: (value) => {print(value)},),
-                    CustomButton(name: "UTILISER CETTE CARTE", onPress: () => Navigator.push(context, MaterialPageRoute<void>(builder: (BuildContext context) => Pay())),),
+                    CustomButton(name: "UTILISER CETTE CARTE", onPress: () => Navigator.push(context, MaterialPageRoute<void>(builder: (BuildContext context) => Command())),),
                   ],
                 )
             )

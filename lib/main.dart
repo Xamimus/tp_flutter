@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_tp/containers/Command/command.dart';
 import 'package:flutter_tp/containers/Pay/pay.dart';
 import 'package:flutter_tp/repositories/abstract/cart_repository.dart';
 import 'package:flutter_tp/repositories/cart_impl_repository.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Pay(),
+      home: Command(),
     ));
   }
 }
