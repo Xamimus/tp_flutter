@@ -6,10 +6,17 @@ class CartImplRespository extends CartRepository {
 
   List<Article> _articles = [];
 
-  int _price = 0;
+  double _price = 0;
 
   @override
   List<Article> get articles => _articles;
+
+  @override
+  double get price => _price;
+
+  set price(double price) {
+    _price = price;
+  }
 
   @override
   addArticle(Article article) => _articles.add(article);
@@ -18,5 +25,12 @@ class CartImplRespository extends CartRepository {
   removeArticle(Article article) => _articles.remove(article);
 
   @override
-  countTotal(Cart cart) => _articles.forEach((article) { cart.price += article.price; });
+  countTotal() => {
+    _price = 0,
+    _articles.forEach((article) {
+    _price += article.price;
+    })
+  };
+
+
 }

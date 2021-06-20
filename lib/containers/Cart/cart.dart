@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_tp/components/Cart/cart_list.dart';
 import 'package:flutter_tp/components/CustomButton/custom_button.dart';
 import 'package:flutter_tp/components/TopBar/top_bar.dart';
 import 'package:flutter_tp/containers/Delivery/delivery.dart';
-import 'package:flutter_tp/models/Article.dart';
-import 'package:flutter_tp/repositories/abstract/cart_repository.dart';
-import 'package:flutter_tp/repositories/cart_impl_repository.dart';
+import 'package:flutter_tp/services/cart/cart_bloc.dart';
 
 class Cart extends StatelessWidget {
   Cart({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+
+    final CartBloc _cartBloc = BlocProvider.of<CartBloc>(context);
+    final dynamic price = _cartBloc.state.props[1];
+
     return Scaffold(
         body: SafeArea(
             child: Column(
@@ -58,7 +61,7 @@ class Cart extends StatelessWidget {
                                     new Container(
                                       margin: const EdgeInsets.only(top: 40),
                                       child: new Text(
-                                          "12€00",
+                                          price.toStringAsFixed(2),
                                           textAlign: TextAlign.center,
                                           style: TextStyle(fontSize: 26,)
                                       ),

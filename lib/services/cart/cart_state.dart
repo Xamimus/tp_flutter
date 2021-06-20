@@ -13,7 +13,7 @@ class CartInitialState extends CartState {
 
   CartInitialState({
     required this.articles,
-    this.price = 0,
+    required this.price,
   });
 
   @override
