@@ -9,12 +9,20 @@ abstract class CartEvent extends Equatable {
 
 class CartInitialEvent extends CartEvent {}
 
+class CartGetEvent extends CartEvent {
+  CartGetEvent();
+}
+
 class CartAddEvent extends CartEvent {
   final Article article;
 
   CartAddEvent(this.article);
 }
 
-class CartRemoveEvent extends CartEvent {}
+class CartRemoveEvent extends CartEvent {
+  final Article article;
+
+  CartRemoveEvent(this.article);
+}
 
 class CartCountEvent extends CartEvent {}

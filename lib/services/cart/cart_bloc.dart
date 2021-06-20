@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:ffi';
 
 import 'package:flutter_tp/models/Article.dart';
 
@@ -13,18 +12,31 @@ part 'cart_state.dart';
 class CartBloc extends Bloc<CartEvent, CartState> {
   final CartRepository _cartRepository;
 
-  CartBloc(this._cartRepository) : super(CartInitialState(articles: []));
+  CartBloc(this._cartRepository) : super(CartInitialState(articles: _cartRepository.articles));
 
   @override
   Stream<CartState> mapEventToState(
     CartEvent event,
   ) async* {
     if (event is CartInitialEvent) {
-      yield CartInitialState(articles: []);
+      yield CartInitialState(articles: _cartRepository.articles);
+    } else if (event is CartGetEvent) {
+
+      yield CartInitialState(
+        articles: _cartRepository.articles,
+      );
     } else if (event is CartAddEvent) {
-      /* Article article = Article(1, "name", "description", 5, "image") */;
-      /* _cartRepository.addArticle(); */
-      print(event);
+  
+      _cartRepository.addArticle(event.article);
+      print(_cartRepository.articles);
+
+      yield CartInitialState(
+        articles: _cartRepository.articles,
+      );
+    } else if (event is CartRemoveEvent) {
+      
+      _cartRepository.removeArticle(event.article);
+      _cartRepository.articles.forEach((element) {print(element.name);});
 
       yield CartInitialState(
         articles: _cartRepository.articles,

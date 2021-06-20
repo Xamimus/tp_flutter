@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_tp/repositories/abstract/cart_repository.dart';
+import 'package:flutter_tp/repositories/cart_impl_repository.dart';
+import 'package:flutter_tp/services/cart/cart_bloc.dart';
 import 'containers/Home/home.dart';
 
 void main() {
@@ -9,13 +13,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
+    CartRepository cartRepository = CartImplRespository();
+
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<CartBloc>(
+          create: (context) => CartBloc(cartRepository),
+        )
+      ],
+      child: MaterialApp(
+      title: 'TP boutique Flutter',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: Home(),
-    );
+    ));
   }
 }

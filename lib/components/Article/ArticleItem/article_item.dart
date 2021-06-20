@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tp/containers/Details/Details.dart';
 import 'package:flutter_tp/models/Article.dart';
+import 'package:flutter_tp/services/cart/cart_bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ArticleItem extends StatelessWidget {
 
@@ -63,7 +65,7 @@ class ArticleItem extends StatelessWidget {
                                 Align(
                                     alignment: Alignment.centerRight,
                                     child: InkWell(
-                                        onTap: () => "Achat",
+                                        onTap: () => {context.read<CartBloc>().add(CartAddEvent(this.article))},
                                         child: Container(
                                           margin: EdgeInsets.only(right: 10.0),
                                           child: Icon(
