@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_tp/components/CustomButton/custom_button.dart';
+import 'package:flutter_tp/containers/EndCommand/end_command.dart';
 import 'package:flutter_tp/services/cart/cart_bloc.dart';
 
 class Command extends StatelessWidget {
@@ -10,7 +11,6 @@ class Command extends StatelessWidget {
   Widget build(BuildContext context) {
     final CartBloc _cartBloc = BlocProvider.of<CartBloc>(context);
     final articles = _cartBloc.state.props[0];
-    final length = articles.length;
     final price = _cartBloc.state.props[1];
     return Scaffold(
       body: SafeArea(
@@ -69,7 +69,7 @@ class Command extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
               ),
-              CustomButton(name: "CONFIRMER", onPress: () => Navigator.push(context, MaterialPageRoute<void>(builder: (BuildContext context) => Command())),),
+              CustomButton(name: "CONFIRMER", onPress: () => Navigator.push(context, MaterialPageRoute<void>(builder: (BuildContext context) => EndCommand())),),
             ],
           ),
         )
