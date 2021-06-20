@@ -4,15 +4,16 @@ class CustomTextField extends StatelessWidget {
 
   final String name;
   bool obscure;
+  final Function(String) onChange;
 
-  CustomTextField({Key? key, required this.name, this.obscure = false}) : super(key: key);
+  CustomTextField({Key? key, required this.name, this.obscure = false, required this.onChange}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
       child: TextField(
-        onChanged: (value) => print(value),
+        onChanged: onChange,
         obscureText: obscure,
         decoration: InputDecoration(
           contentPadding: const EdgeInsets.symmetric(horizontal: 20.0),
