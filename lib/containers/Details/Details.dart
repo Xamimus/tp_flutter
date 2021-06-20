@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tp/components/CustomButton/custom_button.dart';
 import 'package:flutter_tp/components/TopBar/top_bar.dart';
 import 'package:flutter_tp/containers/Cart/cart.dart';
-//import 'package:flutter_tp/components/vertical_scrollable_bar.dart';
 
 class Details extends StatelessWidget {
   Details({Key? key}) : super(key: key);
@@ -102,7 +101,7 @@ class Details extends StatelessWidget {
                             print("Pressed");
                           }
                         ),
-                        new CustomButton(name: "Buy now", onPress:() => print("BUY"),),
+                        new CustomButton(name: "BUY NOW", onPress: () => print("BUY")),
                       ]
                     ),
                   ]

@@ -12,10 +12,10 @@ class ArticleItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-          padding: const EdgeInsets.all(8.0),
           child: InkWell(
               onTap: () => Navigator.push(context, MaterialPageRoute<void>(builder: (BuildContext context) => Details())),
               child: Container(
+                padding: const EdgeInsets.symmetric(vertical: 20.0),
                 child: Card(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15.0),
