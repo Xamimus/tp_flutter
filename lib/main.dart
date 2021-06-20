@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    CartRepository cartRepository = CartImplRespository();
+    CartImplRespository cartRepository = CartImplRespository();
 
     return MultiBlocProvider(
       providers: [

@@ -15,7 +15,7 @@ class ArticleItem extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
           child: InkWell(
-              onTap: () => Navigator.push(context, MaterialPageRoute<void>(builder: (BuildContext context) => Details())),
+              onTap: () => Navigator.push(context, MaterialPageRoute<void>(builder: (BuildContext context) => Details(article: article))),
               child: Container(
                 padding: const EdgeInsets.symmetric(vertical: 20.0),
                 child: Card(

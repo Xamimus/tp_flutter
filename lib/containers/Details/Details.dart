@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tp/components/CustomButton/custom_button.dart';
 import 'package:flutter_tp/components/TopBar/top_bar.dart';
 import 'package:flutter_tp/containers/Cart/cart.dart';
+import 'package:flutter_tp/models/Article.dart';
 
 class Details extends StatelessWidget {
-  Details({Key? key}) : super(key: key);
+
+  Article article;
+
+  Details({Key? key, required this.article}) : super(key: key);
 
   final List<String> categories = ["aller", "aller 2"];
 
@@ -15,7 +19,7 @@ class Details extends StatelessWidget {
         children: <Widget>[
           new Container(
             decoration: new BoxDecoration(
-              image: new DecorationImage(image: new AssetImage("images/test.jpg"), fit: BoxFit.cover,),
+              image: new DecorationImage(image: new NetworkImage(article.image), fit: BoxFit.cover,),
             ),
           ),
           TopBar(
@@ -57,7 +61,7 @@ class Details extends StatelessWidget {
                   children: [
                     new Container(
                       child: new Text(
-                        "Nom du produit à rallonge pour voir sur plusieurs ligne",
+                        article.name,
                         overflow: TextOverflow.ellipsis,
                         maxLines: 2,
                         textAlign: TextAlign.center,
@@ -73,7 +77,7 @@ class Details extends StatelessWidget {
                         new Container(
                           margin: const EdgeInsets.only(top: 40),
                           child: new Text(
-                            "12,00€",
+                            article.price.toStringAsFixed(2),
                             overflow: TextOverflow.ellipsis,
                             maxLines: 2,
                             textAlign: TextAlign.center,

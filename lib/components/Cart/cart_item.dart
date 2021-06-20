@@ -43,12 +43,12 @@ class _CartItemState extends State<CartItem> {
               Column(
                 children: [
                   Container(
-                    margin: EdgeInsets.all(1),
+                    margin: EdgeInsets.all(10.0),
                     width: 110,
                     height: 100,
                     decoration: BoxDecoration(
-                      image: const DecorationImage(
-                        image: NetworkImage('https://cdn.pixabay.com/photo/2021/04/09/22/03/strawberries-6165597_960_720.jpg'),
+                      image: DecorationImage(
+                        image: NetworkImage(item.image),
                         fit: BoxFit.cover,
                       ),
                       border: Border.all(
@@ -112,5 +112,5 @@ class _CartItemState extends State<CartItem> {
     );
   }
 
-  
+
 }

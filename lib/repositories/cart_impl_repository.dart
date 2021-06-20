@@ -6,7 +6,7 @@ class CartImplRespository extends CartRepository {
 
   List<Article> _articles = [];
 
-  int _price = 0; 
+  int _price = 0;
 
   @override
   List<Article> get articles => _articles;
