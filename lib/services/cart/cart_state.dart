@@ -4,7 +4,7 @@ abstract class CartState extends Equatable {
   const CartState();
 
   @override
-  List<Object> get props => [];
+  List<dynamic> get props => [];
 }
 
 class CartInitialState extends CartState {
@@ -13,7 +13,7 @@ class CartInitialState extends CartState {
 
   CartInitialState({
     required this.articles,
-    this.price = 0,
+    required this.price,
   });
 
   @override

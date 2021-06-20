@@ -3,6 +3,7 @@ import 'package:flutter_tp/components/CustomButton/custom_button.dart';
 import 'package:flutter_tp/components/TopBar/top_bar.dart';
 import 'package:flutter_tp/containers/Cart/cart.dart';
 import 'package:flutter_tp/models/Article.dart';
+import 'package:flutter_tp/services/cart/cart_bloc.dart';
 
 class Details extends StatelessWidget {
 
@@ -101,11 +102,14 @@ class Details extends StatelessWidget {
                       children:[
                         new IconButton(
                           icon: new Icon(Icons.shopping_cart, color: Colors.black),
-                          onPressed: () {
-                            print("Pressed");
+                          onPressed: () => {
+                            //context.read<CartBloc>().add(CartAddEvent(this.article))
                           }
                         ),
-                        new CustomButton(name: "BUY NOW", onPress: () => print("BUY")),
+                        new CustomButton(name: "BUY NOW", onPress: () => {
+                          //context.read<CartBloc>().add(CartAddEvent(this.article))
+                          }
+                        ),
                       ]
                     ),
                   ]
