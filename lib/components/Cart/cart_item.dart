@@ -1,11 +1,24 @@
 import 'package:flutter/material.dart';
+// ignore: unused_import
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_tp/services/cart/cart_bloc.dart';
+
 import 'package:flutter_tp/models/Article.dart';
 
-class CartItem extends StatelessWidget {
-
+class CartItem extends StatefulWidget {
   final Article item;
 
-  CartItem({Key? key, required this.item}) : super(key: key);
+  const CartItem({Key? key, required this.item,}) : super(key: key);
+
+  @override
+  _CartItemState createState() => _CartItemState(item: item);
+}
+
+class _CartItemState extends State<CartItem> {
+
+  Article item;
+
+  _CartItemState({required this.item});
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +38,7 @@ class CartItem extends StatelessWidget {
         margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
         child: ClipRRect(
           borderRadius: BorderRadius.all(Radius.circular(20)),
-          child: Padding(
-            padding: EdgeInsets.all(10),
-            child: Expanded(
+          child: Expanded(
               child: Row(children: [
               Column(
                 children: [
@@ -71,12 +82,12 @@ class CartItem extends StatelessWidget {
                                     child: Row(
                                         children: [
                                           TextButton(
-                                              onPressed: () {},
+                                              onPressed: () => {context.read<CartBloc>().add(CartRemoveEvent(this.item))},
                                               child: Text("-")
                                           ),
                                           Text("1"),
                                           TextButton(
-                                              onPressed: () {},
+                                              onPressed: () => {context.read<CartBloc>().add(CartAddEvent(this.item))},
                                               child: Text("+")
                                           ),
                                         ]
@@ -98,7 +109,8 @@ class CartItem extends StatelessWidget {
           ),
         )
       )
-        )
     );
   }
+
+  
 }
